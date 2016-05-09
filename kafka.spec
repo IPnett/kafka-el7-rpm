@@ -65,7 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 %pre
 /usr/bin/getent group kafka >/dev/null || /usr/sbin/groupadd -r kafka
 if ! /usr/bin/getent passwd kafka >/dev/null ; then
-    /usr/sbin/useradd -r -g kafka -m -d %{_prefix}/kafka -s /bin/bash -c "Kafka" kafka
+    /usr/sbin/useradd -r -g kafka -d %{_prefix}/kafka -s /bin/bash -c "Kafka" kafka
 fi
 
 %post
